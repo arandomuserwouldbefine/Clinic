@@ -4,6 +4,10 @@ import Contact from './pages/user/Contact'
 import Services from './pages/user/Services'
 import About from './pages/user/About'
 import Login from './pages/user/Login'
+import AdminLogin from './pages/admin/Login'
+import AdminHome from './pages/admin/Home'
+import ManageContact from './pages/admin/Contact'
+import ManageServices from './pages/admin/Services'
 
 function App() {
 
@@ -18,7 +22,10 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Admin Routes */}
-
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminHome />} />
+        <Route path="/admin/contacts" element={<ManageContact />} />
+        <Route path="/admin/services" element={<ManageServices />} />
       </Routes>
     </>
   )
