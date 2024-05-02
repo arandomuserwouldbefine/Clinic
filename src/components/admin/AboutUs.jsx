@@ -7,9 +7,9 @@ export default function AboutUs() {
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
           <div className="flex flex-col items-start space-y-4">
             <MountainIcon className="h-12 w-12" />
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Acme Inc.</h1>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Rajvi Inc.</h1>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Acme Inc. is a leading provider of innovative solutions for businesses of all sizes. Our mission is to
+              Rajvi Inc. is a leading provider of innovative solutions for businesses of all sizes. Our mission is to
               empower our clients with the tools and resources they need to succeed in today's fast-paced digital
               landscape.
             </p>
@@ -28,7 +28,7 @@ export default function AboutUs() {
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Mission & Values</h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              At Acme Inc., we are driven by a passion for innovation and a commitment to excellence. Our mission is to
+              At Rajvi Inc., we are driven by a passion for innovation and a commitment to excellence. Our mission is to
               empower our clients with cutting-edge solutions that help them achieve their goals and stay ahead of the
               competition.
             </p>

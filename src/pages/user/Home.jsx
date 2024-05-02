@@ -1,7 +1,8 @@
 import Hero from '@/components/user/HeroSection'
 import Navbar from '@/components/user/Navbar'
 import React from 'react'
-import TestimonialSliderCard from './Testimonail'
+import { Footer } from '@/components/user/Footer';
+import TestimonialSliderCard from '@/components/user/Testimonail';
 const testimonials = [
     {
         quote:
@@ -61,6 +62,7 @@ function Home() {
             <div className='mt-5 w-full flex items-center justify-center'>
                 <TestimonialSliderCard testimonials={testimonials} />
             </div>
+            <Footer />
         </div>
     )
 }

@@ -8,6 +8,7 @@ import AdminLogin from './pages/admin/Login'
 import AdminHome from './pages/admin/Home'
 import ManageContact from './pages/admin/Contact'
 import ManageServices from './pages/admin/Services'
+import Register from './pages/user/Register'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />

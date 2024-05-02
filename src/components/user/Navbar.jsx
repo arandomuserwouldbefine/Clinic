@@ -16,7 +16,7 @@ export default function Navbar() {
         <SheetContent side="left">
           <NavLink to="/">
             <MountainIcon className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Rajvi Inc</span>
           </NavLink>
           <div className="grid gap-2 py-6">
             <NavLink className="flex w-full items-center py-2 text-lg font-semibold" to="/">
@@ -36,7 +36,7 @@ export default function Navbar() {
       </Sheet>
       <NavLink className="mr-6 hidden lg:flex" to="/">
         <MountainIcon className="h-6 w-6" />
-        <span className="sr-only">Acme Inc</span>
+        <span className="sr-only">Rajvi Inc</span>
       </NavLink>
       <div className="flex w-full justify-center">
         <NavigationMenu className="hidden lg:flex">
