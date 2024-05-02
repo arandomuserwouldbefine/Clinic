@@ -2,7 +2,7 @@ import AdminNavbar from '@/components/admin/Navbar'
 import DataTable from '@/components/admin/Table'
 import React from 'react'
 
-function ManageServices() {
+function ManageCat() {
   return (
     <div>
       <AdminNavbar />
@@ -11,4 +11,4 @@ function ManageServices() {
   )
 }
 
-export default ManageServices
+export default ManageCat

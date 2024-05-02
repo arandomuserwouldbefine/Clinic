@@ -12,6 +12,10 @@ import Register from './pages/user/Register'
 import ManageBlogs from './pages/admin/ManageBlogs'
 import AddBlog from './pages/admin/AddBlog'
 import AddServices from './pages/admin/AddServices'
+import AddEmp from './pages/admin/AddEmp'
+import ManageEmp from './pages/admin/ManageEmp'
+import AddCat from './pages/admin/AddCat'
+import ManageCat from './pages/admin/ManageCat'
 
 function App() {
 
@@ -32,9 +36,13 @@ function App() {
         <Route path="/admin/contacts" element={<ManageContact />} />
         <Route path="/admin/services" element={<ManageServices />} />
         <Route path="/admin/manageblog" element={<ManageBlogs />} />
-        <Route path="/admin/manageservices" element={<ManageServices />} />
+        <Route path="/admin/manageservices" element={<ManageServices />} /> 
         <Route path="/admin/addblog" element={<AddBlog />} />
         <Route path="/admin/addservices" element={<AddServices />} />
+        <Route path="/admin/addemp" element={<AddEmp />} />
+        <Route path="/admin/manageemp" element={<ManageEmp />} />
+        <Route path="/admin/addcat" element={<AddCat />} />
+        <Route path="/admin/managecat" element={<ManageCat />} />
       </Routes>
     </>
   )
