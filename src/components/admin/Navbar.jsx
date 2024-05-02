@@ -6,35 +6,22 @@ import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/com
 import { ResponsiveLine } from "@nivo/line"
 import { ResponsiveBar } from "@nivo/bar"
 import { ResponsivePie } from "@nivo/pie"
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
 
 export default function AdminNavbar() {
   return (
     <div className="flex min-h-screen w-full">
       <div className="hidden w-64 shrink-0 border-r bg-gray-50 dark:border-gray-800 dark:bg-gray-900 md:block">
         <div className="flex h-16 items-center justify-between border-b px-6 dark:border-gray-800">
-          <Link className="flex items-center gap-2 font-bold" href="#">
+          <Link className="flex items-center gap-2 font-bold" to="#">
             <MountainIcon className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="icon" variant="ghost">
-                <SettingsIcon className="h-5 w-5" />
-                <span className="sr-only">Open settings menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+
         </div>
         <nav className="flex flex-col gap-2 px-4 py-6">
           <Link
             className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-            href="#"
+            to="/admin/dashboard"
           >
             <HomeIcon className="h-5 w-5" />
             Dashboard
@@ -43,74 +30,105 @@ export default function AdminNavbar() {
             <CollapsibleTrigger className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50">
               <div className="flex items-center gap-3">
                 <PackageIcon className="h-5 w-5" />
-                Products
+                Services
               </div>
               <ChevronDownIcon className="h-5 w-5 transition-transform group-[data-state=open]:rotate-180" />
             </CollapsibleTrigger>
             <CollapsibleContent className="pl-8">
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
+                to="/admin/manageservices"
               >
-                All Products
+                Manage Services
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
+                to="/admin/addservices"
               >
+                Add Services
+              </Link>
+
+            </CollapsibleContent>
+          </Collapsible>
+          <Collapsible className="grid gap-1">
+            <CollapsibleTrigger className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50">
+              <div className="flex items-center gap-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFKHSDgZgGEommzT46uQpsOAVeugjvyPWiielP-84v9w&s" className="h-5 w-5" />
                 Categories
+              </div>
+              <ChevronDownIcon className="h-5 w-5 transition-transform group-[data-state=open]:rotate-180" />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pl-8">
+              <Link
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
+                to="/admin/managecat"
+              >
+                Manage Category
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
+                to="/admin/addcat"
               >
-                Inventory
+                Add Category
+              </Link>
+
+            </CollapsibleContent>
+          </Collapsible>
+          <Collapsible className="grid gap-1">
+            <CollapsibleTrigger className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50">
+              <div className="flex items-center gap-3">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/001/505/042/small/employee-icon-free-vector.jpg" className="h-5 w-5" />
+                Employee
+              </div>
+              <ChevronDownIcon className="h-5 w-5 transition-transform group-[data-state=open]:rotate-180" />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pl-8">
+              <Link
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
+                to="/admin/manageemp"
+              >
+                Manage Employee
+              </Link>
+              <Link
+                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
+                to="/admin/addemp"
+              >
+                Add Employee
               </Link>
             </CollapsibleContent>
           </Collapsible>
           <Collapsible className="grid gap-1">
             <CollapsibleTrigger className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50">
               <div className="flex items-center gap-3">
-                <UsersIcon className="h-5 w-5" />
-                Customers
+                <img src="https://www.svgrepo.com/show/109162/blog.svg" className="h-5 w-5" />
+                Blog
               </div>
               <ChevronDownIcon className="h-5 w-5 transition-transform group-[data-state=open]:rotate-180" />
             </CollapsibleTrigger>
             <CollapsibleContent className="pl-8">
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
+                to="/admin/manageblog"
               >
-                All Customers
+                Manage Blog
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
+                to="/admin/addblog"
               >
-                Groups
-              </Link>
-              <Link
-                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                href="#"
-              >
-                Subscriptions
+                Add Blog
               </Link>
             </CollapsibleContent>
           </Collapsible>
           <Link
             className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-            href="#"
+            to="/admin/contacts"
           >
-            <BarChartIcon className="h-5 w-5" />
-            Analytics
+            <img src="https://www.svgrepo.com/show/55744/notebook-of-contacts.svg" className="h-5 w-5" />
+            Contacts
           </Link>
-          <Link
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-            href="#"
-          >
-            <SettingsIcon className="h-5 w-5" />
-            Settings
-          </Link>
+
+
         </nav>
       </div>
       <div className="flex flex-1 flex-col">
@@ -129,7 +147,7 @@ export default function AdminNavbar() {
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
-                  src="/placeholder.svg"
+                  src="https://img.lovepik.com/element/45001/3052.png_860.png"
                   style={{
                     aspectRatio: "32/32",
                     objectFit: "cover",
@@ -184,153 +202,7 @@ export default function AdminNavbar() {
                 </CardContent>
               </Card>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Top Products</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Product</TableHead>
-                        <TableHead>Sales</TableHead>
-                        <TableHead>Inventory</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell>
-                          <div className="flex items-center gap-3">
-                            <img
-                              alt="Product image"
-                              className="rounded-md"
-                              height="40"
-                              src="/placeholder.svg"
-                              style={{
-                                aspectRatio: "40/40",
-                                objectFit: "cover",
-                              }}
-                              width="40"
-                            />
-                            <div>
-                              <div className="font-medium">Acme Widget</div>
-                              <div className="text-sm text-gray-500 dark:text-gray-400">SKU: 123456</div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>1,234</TableCell>
-                        <TableCell>500</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="flex items-center gap-3">
-                            <img
-                              alt="Product image"
-                              className="rounded-md"
-                              height="40"
-                              src="/placeholder.svg"
-                              style={{
-                                aspectRatio: "40/40",
-                                objectFit: "cover",
-                              }}
-                              width="40"
-                            />
-                            <div>
-                              <div className="font-medium">Acme Gadget</div>
-                              <div className="text-sm text-gray-500 dark:text-gray-400">SKU: 654321</div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>987</TableCell>
-                        <TableCell>250</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="flex items-center gap-3">
-                            <img
-                              alt="Product image"
-                              className="rounded-md"
-                              height="40"
-                              src="/placeholder.svg"
-                              style={{
-                                aspectRatio: "40/40",
-                                objectFit: "cover",
-                              }}
-                              width="40"
-                            />
-                            <div>
-                              <div className="font-medium">Acme Thingamajig</div>
-                              <div className="text-sm text-gray-500 dark:text-gray-400">SKU: 789012</div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>654</TableCell>
-                        <TableCell>100</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Recent Orders</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Order</TableHead>
-                        <TableHead>Customer</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Status</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">#12345</div>
-                        </TableCell>
-                        <TableCell>
-                          <div>John Doe</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">johndoe@example.com</div>
-                        </TableCell>
-                        <TableCell>2023-05-01</TableCell>
-                        <TableCell>
-                          <Badge variant="success">Delivered</Badge>
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">#54321</div>
-                        </TableCell>
-                        <TableCell>
-                          <div>Jane Smith</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">janesmith@example.com</div>
-                        </TableCell>
-                        <TableCell>2023-04-28</TableCell>
-                        <TableCell>
-                          <Badge variant="warning">Pending</Badge>
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">#98765</div>
-                        </TableCell>
-                        <TableCell>
-                          <div>Bob Johnson</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">bobjohnson@example.com</div>
-                        </TableCell>
-                        <TableCell>2023-04-22</TableCell>
-                        <TableCell>
-                          <Badge variant="danger">Cancelled</Badge>
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </CardContent>
-              </Card>
-            </div>
+
           </div>
         </main>
       </div>

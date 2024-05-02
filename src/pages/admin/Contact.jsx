@@ -1,5 +1,5 @@
 import AdminNavbar from '@/components/admin/Navbar'
-import ContactForm from '@/components/user/ContactForm'
+import DataTable from '@/components/admin/Table'
 import React from 'react'
 
 function ManageContact() {
@@ -7,7 +7,7 @@ function ManageContact() {
     <div>
       <AdminNavbar />
       <div className='flex items-center justify-center mt-10'>
-        {/* <ContactForm /> */}
+        <DataTable />
       </div>
     </div>
   )
