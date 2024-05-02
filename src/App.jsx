@@ -36,7 +36,7 @@ function App() {
         <Route path="/admin/contacts" element={<ManageContact />} />
         <Route path="/admin/services" element={<ManageServices />} />
         <Route path="/admin/manageblog" element={<ManageBlogs />} />
-        <Route path="/admin/manageservices" element={<ManageServices />} /> 
+        <Route path="/admin/manageservices" element={<ManageServices />} />
         <Route path="/admin/addblog" element={<AddBlog />} />
         <Route path="/admin/addservices" element={<AddServices />} />
         <Route path="/admin/addemp" element={<AddEmp />} />
