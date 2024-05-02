@@ -9,6 +9,9 @@ import AdminHome from './pages/admin/Home'
 import ManageContact from './pages/admin/Contact'
 import ManageServices from './pages/admin/Services'
 import Register from './pages/user/Register'
+import ManageBlogs from './pages/admin/ManageBlogs'
+import AddBlog from './pages/admin/AddBlog'
+import AddServices from './pages/admin/AddServices'
 
 function App() {
 
@@ -28,6 +31,10 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminHome />} />
         <Route path="/admin/contacts" element={<ManageContact />} />
         <Route path="/admin/services" element={<ManageServices />} />
+        <Route path="/admin/manageblog" element={<ManageBlogs />} />
+        <Route path="/admin/manageservices" element={<ManageServices />} />
+        <Route path="/admin/addblog" element={<AddBlog />} />
+        <Route path="/admin/addservices" element={<AddServices />} />
       </Routes>
     </>
   )

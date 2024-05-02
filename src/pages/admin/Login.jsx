@@ -9,7 +9,6 @@ import { Link } from "react-router-dom"
 export default function Login() {
   return (
     <div>
-      <Navbar />
       <Card className="mx-auto max-w-sm mt-20 mb-20">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold">Login</CardTitle>
@@ -31,7 +30,6 @@ export default function Login() {
           </div>
         </CardContent>
       </Card>
-      <Footer />
     </div>
   )
 }

@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/user/Footer"
 import Navbar from "@/components/user/Navbar"
 import { Link } from "react-router-dom"
-import AdminNavbar from "@/components/admin/Navbar"
 
 export default function Register() {
     return (
         <div>
-            <AdminNavbar />
+            <Navbar />
             <Card className="mx-auto max-w-sm mt-20 mb-20">
                 <CardHeader className="space-y-1">
                     <CardTitle className="text-2xl font-bold">Register</CardTitle>
@@ -47,6 +46,7 @@ export default function Register() {
                     </div>
                 </CardContent>
             </Card>
+            <Footer />
         </div>
     )
 }

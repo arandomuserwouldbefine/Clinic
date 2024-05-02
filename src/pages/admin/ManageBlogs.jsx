@@ -1,14 +1,14 @@
 import AdminNavbar from '@/components/admin/Navbar'
-import AboutUs from '@/components/user/AboutUs'
+import DataTable from '@/components/admin/Table'
 import React from 'react'
 
-function AdminAbout() {
+function ManageBlogs() {
   return (
     <div>
         <AdminNavbar />
-        {/* <AboutUs /> */}
+        <DataTable />
     </div>
   )
 }
 
-export default AdminAbout
+export default ManageBlogs

@@ -7,7 +7,7 @@ import { ResponsiveLine } from "@nivo/line"
 import { ResponsiveBar } from "@nivo/bar"
 import { ResponsivePie } from "@nivo/pie"
 
-export default function AdminNavbar() {
+export default function AdminNavbar(children) {
   return (
     <div className="flex min-h-screen w-full">
       <div className="hidden w-64 shrink-0 border-r bg-gray-50 dark:border-gray-800 dark:bg-gray-900 md:block">
