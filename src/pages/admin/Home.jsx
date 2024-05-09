@@ -5,8 +5,9 @@ import React from 'react'
 function AdminHome() {
     return (
         <div>
-            <AdminNavbar />
-            {/* <Hero /> */}
+            <AdminNavbar >
+                <h1>Dashboard</h1>
+            </AdminNavbar>
         </div>
     )
 }

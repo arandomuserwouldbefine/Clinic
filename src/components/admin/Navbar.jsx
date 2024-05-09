@@ -7,7 +7,7 @@ import { ResponsiveLine } from "@nivo/line"
 import { ResponsiveBar } from "@nivo/bar"
 import { ResponsivePie } from "@nivo/pie"
 
-export default function AdminNavbar(children) {
+export default function AdminNavbar({children}) {
   return (
     <div className="flex min-h-screen w-full">
       <div className="hidden w-64 shrink-0 border-r bg-gray-50 dark:border-gray-800 dark:bg-gray-900 md:block">
@@ -165,46 +165,7 @@ export default function AdminNavbar(children) {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex-1 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto grid gap-8 p-6 md:p-8">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Total Orders</CardTitle>
-                  <CardDescription>
-                    <span className="text-2xl font-bold">1,234</span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <LineChart className="aspect-[9/4]" />
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Revenue</CardTitle>
-                  <CardDescription>
-                    <span className="text-2xl font-bold">$45,678</span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart className="aspect-[9/4]" />
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Active Customers</CardTitle>
-                  <CardDescription>
-                    <span className="text-2xl font-bold">987</span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <PieChart className="aspect-square" />
-                </CardContent>
-              </Card>
-            </div>
-
-          </div>
-        </main>
+                  {children}
       </div>
     </div>
   )
