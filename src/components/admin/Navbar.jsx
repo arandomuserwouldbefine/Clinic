@@ -30,22 +30,22 @@ export default function AdminNavbar({children}) {
             <CollapsibleTrigger className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50">
               <div className="flex items-center gap-3">
                 <PackageIcon className="h-5 w-5" />
-                Services
+                Products
               </div>
               <ChevronDownIcon className="h-5 w-5 transition-transform group-[data-state=open]:rotate-180" />
             </CollapsibleTrigger>
             <CollapsibleContent className="pl-8">
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                to="/admin/manageservices"
+                to="/admin/manageproducts"
               >
-                Manage Services
+                Manage Products
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-                to="/admin/addservices"
+                to="/admin/addproducts"
               >
-                Add Services
+                Add Products
               </Link>
 
             </CollapsibleContent>

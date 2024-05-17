@@ -16,6 +16,9 @@ import AddEmp from './pages/admin/AddEmp'
 import ManageEmp from './pages/admin/ManageEmp'
 import AddCat from './pages/admin/AddCat'
 import ManageCat from './pages/admin/ManageCat'
+import AddProducts from './pages/admin/AddServices'
+import ManageProducts from './pages/admin/ManageServices'
+import UserTable from './pages/admin/Customer'
 
 function App() {
 
@@ -26,19 +29,20 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Services />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/customers" element={<UserTable />} />
         <Route path="/admin/dashboard" element={<AdminHome />} />
         <Route path="/admin/contacts" element={<ManageContact />} />
         <Route path="/admin/services" element={<ManageServices />} />
         <Route path="/admin/manageblog" element={<ManageBlogs />} />
-        <Route path="/admin/manageservices" element={<ManageServices />} />
+        <Route path="/admin/manageproducts" element={<ManageProducts />} />
         <Route path="/admin/addblog" element={<AddBlog />} />
-        <Route path="/admin/addservices" element={<AddServices />} />
+        <Route path="/admin/addproducts" element={<AddProducts />} />
         <Route path="/admin/addemp" element={<AddEmp />} />
         <Route path="/admin/manageemp" element={<ManageEmp />} />
         <Route path="/admin/addcat" element={<AddCat />} />

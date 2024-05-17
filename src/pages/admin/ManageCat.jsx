@@ -1,42 +1,84 @@
-import AdminNavbar from '@/components/admin/Navbar';
 import React, { useEffect, useState } from 'react';
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table";
+import AdminNavbar from '@/components/admin/Navbar';
+import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableFooter,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table";
 
-function ManageCat() {
-    const [categories, setCategories] = useState([]);
+function ManageEmp() {
+    const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/categories")
-            .then((resp) => resp.json())
-            .then((data) => setCategories(data));
+        fetchEmployees();
     }, []);
+
+    const fetchEmployees = async () => {
+        try {
+            const response = await axios.get('http://localhost:3000/employees');
+            setEmployees(response.data);
+        } catch (error) {
+            console.error("Error fetching employees:", error);
+        }
+    };
+
+    const deleteEmployee = async (id) => {
+        try {
+            await axios.delete(`http://localhost:3000/employees/${id}`);
+            setEmployees(employees.filter(employee => employee.id !== id));
+        } catch (error) {
+            console.error("Error deleting employee:", error);
+        }
+    };
 
     return (
         <AdminNavbar>
-            <div style={{ margin: "60px" }}>
-                <div className="border rounded-lg w-full">
-                    <div className="relative w-full overflow-auto">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead>ID</TableHead>
-                                    <TableHead>Name</TableHead>
+            <Card className="mx-auto mt-20 mb-20">
+                <CardHeader className="space-y-1">
+                    <CardTitle className="text-2xl font-bold">Manage Employees</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <Table className="w-full">
+                        <TableCaption>A list of your employees.</TableCaption>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>ID</TableHead>
+                                <TableHead>Name</TableHead>
+                                <TableHead>Action</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {employees.map(employee => (
+                                <TableRow key={employee.id}>
+                                    <TableCell>{employee.id}</TableCell>
+                                    <TableCell>{employee.name}</TableCell>
+                                    <TableCell>
+                                        <div className="flex items-center">
+                                            <Link to={`/editemployee/${employee.id}`} className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Edit</Link>
+                                            <button onClick={() => deleteEmployee(employee.id)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                                        </div>
+                                    </TableCell>
                                 </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {categories.map((category, index) => (
-                                    <TableRow key={category.id}>
-                                        <TableCell className="font-medium">{category.id}</TableCell>
-                                        <TableCell>{category.name}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </div>
-                </div>
-            </div>
+                            ))}
+                        </TableBody>
+                        <TableFooter>
+                            <TableRow>
+                                <TableCell colSpan={3}>Total Employees: {employees.length}</TableCell>
+                            </TableRow>
+                        </TableFooter>
+                    </Table>
+                </CardContent>
+            </Card>
         </AdminNavbar>
     );
 }
 
-export default ManageCat;
+export default ManageEmp;

@@ -3,11 +3,11 @@ import DataTable from '@/components/admin/Table'
 import React, { useEffect, useState } from 'react'
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table";
 
-function ManageServices() {
+function ManageProducts() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/services")
+    fetch("http://localhost:3000/products")
       .then((resp) => resp.json())
       .then((data) => setServices(data));
   }, []);
@@ -46,4 +46,4 @@ function ManageServices() {
   )
 }
 
-export default ManageServices
+export default ManageProducts
