@@ -19,6 +19,12 @@ import ManageCat from './pages/admin/ManageCat'
 import AddProducts from './pages/admin/AddServices'
 import ManageProducts from './pages/admin/ManageServices'
 import UserTable from './pages/admin/Customer'
+import EditProduct from './pages/admin/EditProduct'
+import EditCategory from './pages/admin/EditCategory'
+import EditEmployee from './pages/admin/EditEmployee'
+import EditBlog from './pages/admin/EditBlog'
+import Blog from './pages/user/Blog'
+import ViewBlog from './pages/user/ViewBlog'
 
 function App() {
 
@@ -32,6 +38,8 @@ function App() {
         <Route path="/products" element={<Services />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/viewblog/:id" element={<ViewBlog />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -47,7 +55,13 @@ function App() {
         <Route path="/admin/manageemp" element={<ManageEmp />} />
         <Route path="/admin/addcat" element={<AddCat />} />
         <Route path="/admin/managecat" element={<ManageCat />} />
+        <Route path="/editproduct/:id" element={<EditProduct />} />
+        <Route path="/editcategory/:id" element={<EditCategory />} />
+        <Route path="/editemployee/:id" element={<EditEmployee />} />
+        <Route path="/editblog/:id" element={<EditBlog />} />
+
       </Routes>
+
     </>
   )
 }

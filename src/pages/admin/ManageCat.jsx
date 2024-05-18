@@ -14,28 +14,28 @@ import {
     TableRow,
 } from "@/components/ui/table";
 
-function ManageEmp() {
-    const [employees, setEmployees] = useState([]);
+function ManageCategories() {
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetchEmployees();
+        fetchCategories();
     }, []);
 
-    const fetchEmployees = async () => {
+    const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/employees');
-            setEmployees(response.data);
+            const response = await axios.get('http://localhost:3000/categories');
+            setCategories(response.data);
         } catch (error) {
-            console.error("Error fetching employees:", error);
+            console.error("Error fetching categories:", error);
         }
     };
 
-    const deleteEmployee = async (id) => {
+    const deleteHandle = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/employees/${id}`);
-            setEmployees(employees.filter(employee => employee.id !== id));
+            const res = await axios.delete(`http://localhost:3000/categories/${id}`);
+            setCategories(categories.filter(category => category.id !== id));
         } catch (error) {
-            console.error("Error deleting employee:", error);
+            console.error("Error deleting category:", error);
         }
     };
 
@@ -43,35 +43,33 @@ function ManageEmp() {
         <AdminNavbar>
             <Card className="mx-auto mt-20 mb-20">
                 <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl font-bold">Manage Employees</CardTitle>
+                    <CardTitle className="text-2xl font-bold">Manage Categories</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Table className="w-full">
-                        <TableCaption>A list of your employees.</TableCaption>
+                        <TableCaption>A list of your categories.</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>ID</TableHead>
+                                <TableHead className="w-[100px]">ID</TableHead>
                                 <TableHead>Name</TableHead>
                                 <TableHead>Action</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {employees.map(employee => (
-                                <TableRow key={employee.id}>
-                                    <TableCell>{employee.id}</TableCell>
-                                    <TableCell>{employee.name}</TableCell>
+                            {categories.map(category => (
+                                <TableRow key={category.id}>
+                                    <TableCell className="font-medium">{category.id}</TableCell>
+                                    <TableCell>{category.name}</TableCell>
                                     <TableCell>
-                                        <div className="flex items-center">
-                                            <Link to={`/editemployee/${employee.id}`} className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Edit</Link>
-                                            <button onClick={() => deleteEmployee(employee.id)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
-                                        </div>
+                                        <Link to={`/editcategory/${category.id}`} className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Edit</Link>
+                                        <button onClick={() => deleteHandle(category.id)} className="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
                                     </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
                         <TableFooter>
                             <TableRow>
-                                <TableCell colSpan={3}>Total Employees: {employees.length}</TableCell>
+                                <TableCell colSpan={2}>Total Categories: {categories.length}</TableCell>
                             </TableRow>
                         </TableFooter>
                     </Table>
@@ -81,4 +79,4 @@ function ManageEmp() {
     );
 }
 
-export default ManageEmp;
+export default ManageCategories;

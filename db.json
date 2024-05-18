@@ -3,21 +3,23 @@
     {
       "id": "b399",
       "title": "fadsf",
-      "description": "f",
-      "price": "1",
+      "description": "bad",
+      "price": "12",
       "imageURL": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80",
-      "category": "fasdf"
+      "category": "fasdf",
+      "name": "good",
+      "imageUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80"
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "ABC",
+      "name": "ABCEEE",
       "dateTime": "fajsdlfja"
     },
     {
       "id": "2",
-      "name": "DEF",
+      "name": "BEST",
       "dateTime": "fajsdlfja"
     },
     {
@@ -50,18 +52,31 @@
   "employees": [
     {
       "id": "1",
-      "name": "fasjdfl"
+      "name": "fasjdfl",
+      "email": "fasdf@gmail.com",
+      "phone": "123123"
     },
     {
       "id": "2",
-      "name": "nfasdf"
+      "name": "nfasdf",
+      "email": "test2@gmail.com",
+      "phone": "123213"
     },
     {
       "id": "3",
-      "name": "fadf"
+      "name": "fadffasdfasdf",
+      "email": "test3332@gmail.com",
+      "phone": "123213"
     }
   ],
-  "blogs": [],
+  "blogs": [
+    {
+      "id": "f42d",
+      "title": "fadsf",
+      "description": "fadsf",
+      "imageUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80"
+    }
+  ],
   "contacts": [
     {
       "id": "1",
